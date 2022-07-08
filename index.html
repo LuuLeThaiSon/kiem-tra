@@ -19,29 +19,24 @@
 <script>
 
      function login() {
+          // debugger
+          let count = 0;
 
-          let password = document.getElementById("password").value;
-
-          let count=0;
-
-          if (password=="12345") {
-                    document.getElementById("text").innerHTML= "Mật khẩu đúng"
+          while (count < 5) {
+               count++;
+               let password = document.getElementById("password").value;
+               if (password=="12345") {
+                    document.getElementById("text").innerHTML= "Mật khẩu đúng";
+                    break;
                } else {
-                    
-                    while (count<5) {
-                         document.getElementById("text").innerHTML= "Nhập lại";
-                         count++;
-
-                         if (count==5) {
-                              document.write("aaa");
-                              break;
-                              
-                         }
-                         
-                    }
-
-                    
-                         
-               }    
+                    document.getElementById("text").innerHTML= "Nhập lại";
+               }
+               
+               if (count==5) {
+                    alert("Goodbye");
+               }
+               console.log(count)
+          }
+          
      }
 </script>
