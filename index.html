@@ -17,23 +17,19 @@
 </html>
 
 <script>
-
+     let count = 0;
      function login() {
-          // debugger
-          let count = 0;
-
-          while (count < 5) {
                count++;
                let password = document.getElementById("password").value;
                if (password=="12345") {
                     document.getElementById("text").innerHTML= "Mật khẩu đúng";
-                    break;
-               } else {
+                    return;
+               } else if (password!="12345" && count<5) {
                     document.getElementById("text").innerHTML= "Nhập lại";
-               }
-          }
-          if (count==5) {
+               } else {
                     document.write("Goodbye");
                }
      }
+          
+     
 </script>
